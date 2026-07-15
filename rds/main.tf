@@ -1,5 +1,5 @@
 ﻿resource "aws_security_group" "rds_sg" {
-  name        = "${var.project_name}-rds-sg"
+  name        = "${var.project_name}-${var.db_identifier}-rds-sg"
   description = "Permite acesso ao Postgres"
   vpc_id      = var.vpc_id
 
@@ -21,7 +21,7 @@
 }
 
 resource "aws_db_subnet_group" "main" {
-  name       = "${var.project_name}-subnet-group"
+  name       = "${var.project_name}-${var.db_identifier}-subnet-group"
   subnet_ids = var.private_subnet_ids
 
   tags = var.tags

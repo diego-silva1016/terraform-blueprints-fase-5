@@ -19,7 +19,7 @@ variable "create_namespace" {
 }
 
 variable "values" {
-  type    = map(any)
+  type    = any
   default = {}
 }
 
