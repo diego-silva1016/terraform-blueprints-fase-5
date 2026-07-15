@@ -34,9 +34,9 @@ locals {
     }
   }
 
-  merged_values = merge(
-    local.default_values,
-    coalesce(var.values, {})
+  merged_values = try(
+    merge(local.default_values, var.values),
+    local.default_values
   )
 }
 
