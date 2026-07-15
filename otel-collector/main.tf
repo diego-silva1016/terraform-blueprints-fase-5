@@ -1,6 +1,9 @@
 locals {
   default_values = {
     mode = var.mode
+    image = {
+      repository = "otel/opentelemetry-collector-contrib"
+    }
     config = {
       receivers = {
         otlp = {
